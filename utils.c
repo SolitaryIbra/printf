@@ -17,7 +17,6 @@ int is_printable(char character)
 /**
  * append_hexa_code - aabbcc
  * @mybuff: aabbcc
- * @myinti: aabbcc
  * @utfcode: aabbcc
  * @i: aabbcc
  * Return: aabbcc
