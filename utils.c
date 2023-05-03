@@ -19,6 +19,7 @@ int is_printable(char character)
  * @mybuff: aabbcc
  * @myinti: aabbcc
  * @utfcode: aabbcc
+ * @i: aabbcc
  * Return: aabbcc
  */
 int append_hexa_code(char utfcode, char mybuff[], int i)
