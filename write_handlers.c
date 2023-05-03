@@ -89,8 +89,7 @@ mylen, extra_padd, extra_ch));
 *
 * Return: aabbcc
 */
-int write_num(int myindent, char mybuff[],
-int clicker, int mywid, int prec,
+int write_num(int myindent, char mybuff[], int clicker, int mywid, int prec,
 int mylen, char extra_padd, char extra_character)
 {
 int myinti, padd_start = 1;
@@ -106,8 +105,7 @@ while (prec > mylen)
 mybuff[--myindent] = '0', mylen++;
 if (extra_character != 0)
 mylen++;
-if (mywid > mylen)
-{
+if (mywid > mylen) {
 for (myinti = 1; myinti < mywid - mylen + 1; myinti++)
 mybuff[myinti] = extra_padd;
 mybuff[myinti] = '\0';
@@ -120,14 +118,13 @@ return (write(1, &mybuff[myindent], mylen)
 }
 else if (!(clicker & F_MINUS) && extra_padd == ' ')
 {
-if (extra_character) 
+if (extra_character)
 mybuff[--myindent] = extra_character;
 return (write(1, &mybuff[1], myinti - 1)
 + write(1, &mybuff[myindent], mylen));
 }
-else if (!(clicker & F_MINUS) && extra_padd == '0')
-{
-if (extra_character) 
+else if (!(clicker & F_MINUS) && extra_padd == '0') {
+if (extra_character)
 mybuff[--padd_start] = extra_character;
 return (write(1, &mybuff[padd_start], myinti - padd_start) +
 write(1, &mybuff[myindent], mylen - (1 - padd_start)));
