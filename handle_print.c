@@ -11,8 +11,9 @@
  * @area: aabbcc
  * Return: aabbcc
  */
-int handle_print(const char *myform, int *intedation, va_list vector, char mybuff[],
-	int clicker, int mywid, int exact, int area)
+int handle_print(const char *myform, int *intedation,
+va_list vector, char mybuff[],
+int clicker, int mywid, int exact, int area)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
