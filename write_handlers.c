@@ -105,7 +105,8 @@ while (prec > mylen)
 mybuff[--myindent] = '0', mylen++;
 if (extra_character != 0)
 mylen++;
-if (mywid > mylen) {
+if (mywid > mylen)
+{
 for (myinti = 1; myinti < mywid - mylen + 1; myinti++)
 mybuff[myinti] = extra_padd;
 mybuff[myinti] = '\0';
@@ -113,8 +114,7 @@ if (clicker & F_MINUS && extra_padd == ' ')
 {
 if (extra_character)
 mybuff[--myindent] = extra_character;
-return (write(1, &mybuff[myindent], mylen)
-+ write(1, &mybuff[1], myinti - 1));
+return (write(1, &mybuff[myindent], mylen) + write(1, &mybuff[1], myinti - 1));
 }
 else if (!(clicker & F_MINUS) && extra_padd == ' ')
 {
@@ -123,7 +123,8 @@ mybuff[--myindent] = extra_character;
 return (write(1, &mybuff[1], myinti - 1)
 + write(1, &mybuff[myindent], mylen));
 }
-else if (!(clicker & F_MINUS) && extra_padd == '0') {
+else if (!(clicker & F_MINUS) && extra_padd == '0')
+{
 if (extra_character)
 mybuff[--padd_start] = extra_character;
 return (write(1, &mybuff[padd_start], myinti - padd_start) +
