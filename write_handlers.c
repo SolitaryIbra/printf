@@ -130,7 +130,9 @@ else if (!(clicker & F_MINUS) && extra_padd == '0')
 if (extra_character) 
 mybuff[--padd_start] = extra_character;
 return (write(1, &mybuff[padd_start], myinti - padd_start) +
-write(1, &mybuff[myindent], mylen - (1 - padd_start)));}}
+write(1, &mybuff[myindent], mylen - (1 - padd_start)));
+}
+}
 if (extra_character)
 mybuff[--myindent] = extra_character;
 return (write(1, &mybuff[myindent], mylen));
