@@ -77,9 +77,9 @@ mylen, extra_padd, extra_ch));
 }
 
 /**
-* write_num - aabbcc
-* @myindent: aabbcc
-* @mybuff: aabbcc
+ * write_num - aabbcc
+ * @midt: aabbcc
+ * @mybuff: aabbcc
 * @clicker: aabbcc
 * @mywid: aabbcc
 * @prec: aabbcc
@@ -89,20 +89,20 @@ mylen, extra_padd, extra_ch));
 *
 * Return: aabbcc
 */
-int write_num(int myindent, char mybuff[], int clicker, int mywid, int prec,
+int write_num(int midt, char mybuff[],
+int clicker, int mywid, int prec,
 int mylen, char extra_padd, char extra_character)
 {
 int myinti, padd_start = 1;
 
-if (prec == 0 && myindent == BUFF_SIZE - 2 && mybuff[myindent]
-== '0' && mywid == 0)
+if (prec == 0 && midt == BUFF_SIZE - 2 && mybuff[midt] == '0' && mywid == 0)
 return (0);
-if (prec == 0 && myindent == BUFF_SIZE - 2 && mybuff[myindent] == '0')
-mybuff[myindent] = extra_padd = ' ';
+if (prec == 0 && midt == BUFF_SIZE - 2 && mybuff[midt] == '0')
+mybuff[midt] = extra_padd = ' ';
 if (prec > 0 && prec < mylen)
 extra_padd = ' ';
 while (prec > mylen)
-mybuff[--myindent] = '0', mylen++;
+mybuff[--midt] = '0', mylen++;
 if (extra_character != 0)
 mylen++;
 if (mywid > mylen)
@@ -113,26 +113,26 @@ mybuff[myinti] = '\0';
 if (clicker & F_MINUS && extra_padd == ' ')
 {
 if (extra_character)
-mybuff[--myindent] = extra_character;
-return (write(1, &mybuff[myindent], mylen) + write(1, &mybuff[1], myinti - 1));
+mybuff[--midt] = extra_character;
+return (write(1, &mybuff[midt], mylen) + write(1, &mybuff[1], myinti - 1));
 }
 else if (!(clicker & F_MINUS) && extra_padd == ' ')
 {
 if (extra_character)
-mybuff[--myindent] = extra_character;
-return (write(1, &mybuff[1], myinti - 1) + write(1, &mybuff[myindent], mylen));
+mybuff[--midt] = extra_character;
+return (write(1, &mybuff[1], myinti - 1) + write(1, &mybuff[midt], mylen));
 }
 else if (!(clicker & F_MINUS) && extra_padd == '0')
 {
 if (extra_character)
 mybuff[--padd_start] = extra_character;
 return (write(1, &mybuff[padd_start], myinti - padd_start) +
-write(1, &mybuff[myindent], mylen - (1 - padd_start)));
+write(1, &mybuff[midt], mylen - (1 - padd_start)));
 }
 }
 if (extra_character)
-mybuff[--myindent] = extra_character;
-return (write(1, &mybuff[myindent], mylen));
+mybuff[--midt] = extra_character;
+return (write(1, &mybuff[midt], mylen));
 }
 
 /**
