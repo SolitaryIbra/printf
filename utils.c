@@ -24,6 +24,7 @@ int is_printable(char character)
 int append_hexa_code(char utfcode, char mybuff[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
+	
 	if (utfcode < 0)
 		utfcode *= -1;
 
