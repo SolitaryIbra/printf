@@ -120,8 +120,7 @@ else if (!(clicker & F_MINUS) && extra_padd == ' ')
 {
 if (extra_character)
 mybuff[--myindent] = extra_character;
-return (write(1, &mybuff[1], myinti - 1)
-+ write(1, &mybuff[myindent], mylen));
+return (write(1, &mybuff[1], myinti - 1) + write(1, &mybuff[myindent], mylen));
 }
 else if (!(clicker & F_MINUS) && extra_padd == '0')
 {
